@@ -116,6 +116,38 @@ th, td { border: 1px solid var(--border); padding: 0.45rem 0.6rem; text-align: l
 th { background: #121a28; color: var(--muted); font-weight: 600; }
 footer { max-width: 920px; margin: 2rem auto 0; color: var(--muted); font-size: 0.85rem; }
 code { font-family: ui-monospace, monospace; font-size: 0.88em; background: #0b1120; padding: 0.1em 0.35em; border-radius: 4px; }
+details.archive {
+  margin-top: 0.5rem;
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  background: #121a28;
+  padding: 0.35rem 0.75rem 0.75rem;
+}
+details.archive > summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 0.35rem;
+  font-weight: 650;
+  color: #fde68a;
+  user-select: none;
+}
+details.archive > summary::-webkit-details-marker { display: none; }
+details.archive > summary::before {
+  content: "▸";
+  display: inline-block;
+  transition: transform 0.15s ease;
+  color: var(--muted);
+}
+details.archive[open] > summary::before { transform: rotate(90deg); }
+details.archive > summary .hint {
+  font-weight: 500;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+details.archive .archive-body { padding-top: 0.35rem; }
 </style>
 </head>
 <body>
@@ -130,8 +162,8 @@ code { font-family: ui-monospace, monospace; font-size: 0.88em; background: #0b1
 <nav class="container">
   <a href="#hypothesis">Hypothesis</a>
   <a href="#hardware">Hardware</a>
-  <a href="#runs">Experiment runs</a>
-  <a href="#next">Next (H10 B-null)</a>
+  <a href="#b-null">Magnetic probe runs</a>
+  <a href="#prior">Prior work (archive)</a>
   <a href="#related">Related pages</a>
 </nav>
 
@@ -169,7 +201,7 @@ code { font-family: ui-monospace, monospace; font-size: 0.88em; background: #0b1
       <tr><td><strong>TinySA Ultra #2</strong></td><td>Spectrum analyzer + <strong>bifilar hybrid coil</strong> antenna (see below)</td></tr>
       <tr><td>Handheld ham radio (70&nbsp;cm / 23&nbsp;cm)</td><td>Band awareness when transmitting elsewhere — not used as the oven RX</td></tr>
       <tr><td>Optional earth bond</td><td>Verified outlet <strong>ground pin only</strong>, short braid — secondary to sealing</td></tr>
-      <tr><td>Tekbox <strong>H10</strong> (planned)</td><td>H-field / B-null inside the cloth with oven on — see <a href="#next">Next</a></td></tr>
+      <tr><td>Tekbox <strong>H10</strong> (this session)</td><td>H-field / B-null beside RX inside or near the cloth — see <a href="#b-null">Magnetic probe runs</a></td></tr>
     </tbody>
   </table>
 
@@ -188,13 +220,46 @@ code { font-family: ui-monospace, monospace; font-size: 0.88em; background: #0b1
   </p>
 </div>
 
-<div class="card" id="runs">
-  <h2>3 · Experiment runs &amp; videos</h2>
+<div class="card" id="b-null">
+  <h2>3 · Magnetic probe runs (Tekbox H10 · B-null)</h2>
   <p>
-    Videos live on Google Drive (not hosted inside this repo). Each link is a plain-language title — click to watch.
-    Additional geometry clips (unwrapped control, both Ultras, etc.) are linked below; oven off/on is in the primary take.
+    Next videos add the <strong>Tekbox H10</strong> magnetic near-field probe so any TinySA peak can be checked for a coincident
+    <strong>B-field</strong> (Hively: B knowledge is required before SLW/SW-vs-TEM language).
+  </p>
+  <ul>
+    <li><strong>SA peak + clear H-probe line</strong> → treat as TEM / mixed — do not claim pure SLW/SW.</li>
+    <li><strong>SA peak + H at noise</strong> → consistent with weak-B hypothesis; still not a proof (log orientation, LNA, seal).</li>
+  </ul>
+  <p>
+    Kit notes:
+    <a href="https://9wzg44nz44-glitch.github.io/kit.html#tinysa-expected">expected TinySA levels + Tekbox cautions</a>
+    · <a href="https://9wzg44nz44-glitch.github.io/kit.html#tekbox">B-null protocol</a>.
   </p>
 
+  <div class="video pending" id="run-h10-a">
+    <span class="tag wait">Pending · standby for Drive link</span>
+    <p style="margin:0.4rem 0 0.2rem"><strong>Video · H10 magnetic probe run A</strong></p>
+    <p class="role">Slot for the first H10 / B-null clip (title will be set from the Drive upload).</p>
+  </div>
+
+  <div class="video pending" id="run-h10-b">
+    <span class="tag wait">Pending · standby for Drive link</span>
+    <p style="margin:0.4rem 0 0.2rem"><strong>Video · H10 magnetic probe run B</strong></p>
+    <p class="role">Slot for the second H10 / B-null clip (title will be set from the Drive upload).</p>
+  </div>
+</div>
+
+<div class="card" id="prior">
+  <h2>4 · Prior work (archive)</h2>
+  <p style="color:var(--muted);font-size:0.95rem;margin-bottom:0.75rem">
+    Earlier 19&nbsp;Sep&nbsp;2026 antenna-only / cloth-geometry takes (before the H10 probe videos). Click to expand.
+  </p>
+  <details class="archive" id="prior-archive">
+    <summary>
+      Prior work — antenna &amp; Faraday-cloth videos
+      <span class="hint">(click to expand archive)</span>
+    </summary>
+    <div class="archive-body">
   <div class="video" id="run-rx-cloth-sealed">
     <span class="tag run">Run · primary take</span>
     <p style="margin:0.4rem 0 0.2rem">
@@ -250,23 +315,8 @@ code { font-family: ui-monospace, monospace; font-size: 0.88em; background: #0b1
       A Drive file later named “Microwave Oven Off” was a <em>duplicate upload</em> of the sealed-tub overview, not a true oven-off baseline — safe to trash.
     </p>
   </div>
-
-</div>
-
-<div class="card" id="next">
-  <h2>4 · Next · H10 magnetic probe (B-null)</h2>
-  <p>
-    Strong next step: place Tekbox <strong>H10</strong> (or H20) <strong>inside</strong> the Faraday cloth beside the RX antennas
-    with the microwave <strong>on</strong>, and ask whether a clear <strong>B-field</strong> accompanies any SA peak.
-  </p>
-  <ul>
-    <li><strong>SA peak + clear H-probe line</strong> → treat as TEM / mixed — do not claim pure SLW/SW.</li>
-    <li><strong>SA peak + H at noise</strong> → consistent with weak-B hypothesis; still not a proof (log orientations, LNA, seal).</li>
-  </ul>
-  <p>
-    Kit notes / expected TinySA levels:
-    <a href="https://9wzg44nz44-glitch.github.io/kit.html#tinysa-expected">hub kit · TinySA expected + Tekbox cautions</a>.
-  </p>
+    </div>
+  </details>
 </div>
 
 <div class="card" id="related">
@@ -277,7 +327,7 @@ code { font-family: ui-monospace, monospace; font-size: 0.88em; background: #0b1
     <li><a href="https://9wzg44nz44-glitch.github.io/kit.html#tekbox">Kit · Tekbox H-probes &amp; B-null</a></li>
   </ul>
   <div class="note">
-    Videos remain on Daniel’s Google Drive. This page only links them. Update pending slots when new Drive URLs arrive (19&nbsp;Sep&nbsp;2026 session).
+    Videos remain on Daniel’s Google Drive. This page only links them. New H10 clips will fill the Magnetic probe slots; earlier takes stay under Prior work.
   </div>
 </div>
 
