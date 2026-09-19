@@ -40,17 +40,27 @@ nav {
 }
 nav a { color: #93c5fd; text-decoration: none; }
 nav a:hover { text-decoration: underline; color: #fff; }
-/* Body/content links: never default purple on dark bg */
-.container a, .card a, footer a {
-  color: #93c5fd;
-  text-decoration: underline;
-  text-underline-offset: 2px;
+/* Body/content links: high contrast on dark (avoid browser default purple) */
+.container a:link,
+.container a:visited,
+.card a:link,
+.card a:visited,
+footer a:link,
+footer a:visited {
+  color: #fde68a !important; /* amber/yellow — readable on dark */
+  text-decoration: underline !important;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
 }
-.container a:visited, .card a:visited, footer a:visited {
-  color: #bfdbfe;
+.container a:hover,
+.card a:hover,
+footer a:hover {
+  color: #ffffff !important;
 }
-.container a:hover, .card a:hover, footer a:hover {
-  color: #ffffff;
+a.inpage-link:link,
+a.inpage-link:visited {
+  color: #fef08c !important;
+  font-weight: 650;
 }
 .container { max-width: 920px; margin: 0 auto; }
 .card {
@@ -92,13 +102,13 @@ ul, ol { padding-left: 1.25rem; margin-bottom: 0.75rem; }
 .video a.watch {
   display: inline-block;
   font-weight: 650;
-  color: #93c5fd;
+  color: #fde68a !important;
   font-size: 1.05rem;
   text-decoration: none;
-  border-bottom: 1px solid rgba(147,197,253,0.35);
+  border-bottom: 2px solid rgba(253,230,138,0.55);
 }
-.video a.watch:visited { color: #bfdbfe; border-bottom-color: rgba(191,219,254,0.45); }
-.video a.watch:hover { color: #fff; border-bottom-color: #fff; }
+.video a.watch:visited { color: #fef08c !important; border-bottom-color: rgba(254,240,140,0.55); }
+.video a.watch:hover { color: #fff !important; border-bottom-color: #fff; }
 .video .role { color: var(--muted); font-size: 0.9rem; margin-top: 0.35rem; }
 .video.pending { opacity: 0.85; border-style: dashed; }
 table { width: 100%; border-collapse: collapse; margin: 0.75rem 0; font-size: 0.92rem; }
@@ -138,8 +148,8 @@ code { font-family: ui-monospace, monospace; font-size: 0.88em; background: #0b1
   <p>
     Today’s kitchen work is an <strong>effective mockup / first listen</strong>: TinySA Ultras with two antenna types,
     soft Faraday-cloth bag sealed by multi-wrap + kitchen clips, oven on/off baselines.
-    It maps to the longer lab proposal on the
-    <a href="https://9wzg44nz44-glitch.github.io/Proposed-Experiment---Hively-and-Microwave-Oven/">Hively → microwave-oven Faraday-cage methods page</a>,
+    It maps to the longer lab proposal
+    (<a class="inpage-link" href="https://9wzg44nz44-glitch.github.io/Proposed-Experiment---Hively-and-Microwave-Oven/">Hively microwave-oven Faraday-cage methods</a>)
     and also informs <strong>Experiment&nbsp;A</strong> packing (sphere / mesh enclosure discipline).
   </p>
   <div class="warn">
