@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Florida Kitchen Microwave-Oven SLW/SW Experiments · 19 Sep 2026</title>
+<style>
+:root {
+  --bg: #0f1419;
+  --card: #1a2332;
+  --accent: #3b82f6;
+  --accent2: #10b981;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --warn: #f59e0b;
+  --danger: #ef4444;
+  --border: #334155;
+  --hyp: #a78bfa;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  padding: 0 1rem 4rem;
+}
+header {
+  background: linear-gradient(135deg, #1e3a5f 0%, #12241f 55%, #0f172a 100%);
+  border-bottom: 1px solid var(--border);
+  padding: 2.2rem 1rem 1.8rem;
+  margin: 0 -1rem 1.5rem;
+  text-align: center;
+}
+header h1 { font-size: 1.55rem; margin-bottom: 0.45rem; letter-spacing: -0.02em; }
+header .meta { color: var(--muted); font-size: 0.98rem; max-width: 40rem; margin: 0 auto; }
+nav {
+  max-width: 920px; margin: 0 auto 1.25rem; display: flex; flex-wrap: wrap; gap: 0.55rem 1rem;
+  font-size: 0.92rem;
+}
+nav a { color: var(--accent); text-decoration: none; }
+nav a:hover { text-decoration: underline; }
+.container { max-width: 920px; margin: 0 auto; }
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.35rem 1.5rem;
+  margin-bottom: 1.25rem;
+}
+.card h2 {
+  font-size: 1.2rem; color: var(--accent);
+  margin-bottom: 0.75rem; padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--border);
+}
+.card h3 { font-size: 1.02rem; color: var(--accent2); margin: 1rem 0 0.45rem; }
+p, li { margin-bottom: 0.55rem; }
+ul, ol { padding-left: 1.25rem; margin-bottom: 0.75rem; }
+.tag {
+  display: inline-block; font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.04em; text-transform: uppercase;
+  padding: 0.12rem 0.45rem; border-radius: 4px; vertical-align: middle;
+}
+.tag.hyp { background: rgba(167,139,250,0.18); color: var(--hyp); }
+.tag.run { background: rgba(16,185,129,0.15); color: var(--accent2); }
+.tag.wait { background: rgba(148,163,184,0.18); color: var(--muted); }
+.note, .warn, .danger {
+  padding: 0.85rem 1rem; border-radius: 0 8px 8px 0; margin: 1rem 0; font-size: 0.95rem;
+}
+.note { background: rgba(59,130,246,0.08); border-left: 4px solid var(--accent); }
+.warn { background: rgba(245,158,11,0.1); border-left: 4px solid var(--warn); }
+.danger { background: rgba(239,68,68,0.1); border-left: 4px solid var(--danger); }
+.video {
+  background: #0b1120;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem 1.1rem;
+  margin: 0.85rem 0;
+}
+.video a.watch {
+  display: inline-block;
+  font-weight: 650;
+  color: #93c5fd;
+  font-size: 1.05rem;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(147,197,253,0.35);
+}
+.video a.watch:hover { color: #fff; border-bottom-color: #fff; }
+.video .role { color: var(--muted); font-size: 0.9rem; margin-top: 0.35rem; }
+.video.pending { opacity: 0.85; border-style: dashed; }
+table { width: 100%; border-collapse: collapse; margin: 0.75rem 0; font-size: 0.92rem; }
+th, td { border: 1px solid var(--border); padding: 0.45rem 0.6rem; text-align: left; vertical-align: top; }
+th { background: #121a28; color: var(--muted); font-weight: 600; }
+footer { max-width: 920px; margin: 2rem auto 0; color: var(--muted); font-size: 0.85rem; }
+code { font-family: ui-monospace, monospace; font-size: 0.88em; background: #0b1120; padding: 0.1em 0.35em; border-radius: 4px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Florida kitchen · microwave-oven Faraday-cloth listens</h1>
+  <p class="meta">
+    Lady Lake, FL · <strong>19 Sep 2026</strong> · consumer oven at <strong>2.45&nbsp;GHz</strong> ·
+    TinySA Ultra detectors · educational SLW/SW search with warm skepticism
+  </p>
+</header>
+
+<nav class="container">
+  <a href="#hypothesis">Hypothesis</a>
+  <a href="#hardware">Hardware</a>
+  <a href="#runs">Experiment runs</a>
+  <a href="#next">Next (H10 B-null)</a>
+  <a href="#related">Related pages</a>
+</nav>
+
+<div class="container">
+
+<div class="card" id="hypothesis">
+  <h2>1 · Hypothesis we are testing</h2>
+  <p>
+    A consumer microwave oven is already a strong <strong>Faraday cage at 2.45&nbsp;GHz</strong> (TEM leakage is tightly regulated).
+    Extended Electrodynamics / Hively-style bookkeeping asks whether any <strong>non-TEM</strong> component
+    (Scalar Longitudinal Wave <strong>SLW</strong> or Scalar Wave <strong>SW</strong>) could still be detectable
+    <em>outside</em> or <em>through soft Faraday cloth</em> when the oven is on — or whether what we see is ordinary TEM leakage, multipath, or instrument artifact.
+  </p>
+  <p>
+    Today’s kitchen work is an <strong>effective mockup / first listen</strong>: TinySA Ultras with two antenna types,
+    soft Faraday-cloth bag sealed by multi-wrap + kitchen clips, oven on/off baselines.
+    It maps to the longer lab proposal on the
+    <a href="https://9wzg44nz44-glitch.github.io/Proposed-Experiment---Hively-and-Microwave-Oven/">Hively → microwave-oven Faraday-cage methods page</a>,
+    and also informs <strong>Experiment&nbsp;A</strong> packing (sphere / mesh enclosure discipline).
+  </p>
+  <div class="warn">
+    <strong>Warm skepticism.</strong> A peak on a TinySA is not “proven SLW.” Prefer: sealed cloth, source-off baselines,
+    antenna type A/B comparison, and a magnetic (H) probe B-null before any SLW/SW-vs-TEM language.
+  </div>
+</div>
+
+<div class="card" id="hardware">
+  <h2>2 · Hardware setup (kitchen)</h2>
+  <table>
+    <thead><tr><th>Item</th><th>Role</th></tr></thead>
+    <tbody>
+      <tr><td>Consumer microwave oven</td><td>High-power ~2.45&nbsp;GHz source inside its own metal Faraday cage</td></tr>
+      <tr><td>Silver Faraday-cloth bag</td><td>Soft RX enclosure; <strong>three wraps</strong> of all fabric edges held with cereal-bag / thumb clips</td></tr>
+      <tr><td><strong>TinySA Ultra #3</strong></td><td>Spectrum analyzer + <strong>telescoping chrome monopole</strong> antenna</td></tr>
+      <tr><td><strong>TinySA Ultra #2</strong></td><td>Spectrum analyzer + <strong>bifilar hybrid coil</strong> antenna (see below)</td></tr>
+      <tr><td>Handheld ham radio (70&nbsp;cm / 23&nbsp;cm)</td><td>Band awareness when transmitting elsewhere — not used as the oven RX</td></tr>
+      <tr><td>Optional earth bond</td><td>Verified outlet <strong>ground pin only</strong>, short braid — secondary to sealing</td></tr>
+      <tr><td>Tekbox <strong>H10</strong> (planned)</td><td>H-field / B-null inside the cloth with oven on — see <a href="#next">Next</a></td></tr>
+    </tbody>
+  </table>
+
+  <h3>Bifilar hybrid coil (TinySA #2)</h3>
+  <p>
+    Two <strong>opposing-wind</strong> single-wire pancake coils, electrically joined at the center (coil end of the wire),
+    laid on top of each other so the currents are <strong>opposing</strong>. Intent: the magnetic fields largely
+    <strong>cancel</strong> (TEM / loop-like B response suppressed), leaving a detector more sensitive to
+    hypothesized longitudinal / scalar-ish coupling than a plain monopole — still <span class="tag hyp">HYP</span>, not a proof.
+  </p>
+
+  <h3>Cloth seal (important)</h3>
+  <p>
+    Edges are not left open for the real runs: <strong>three wraps</strong> of fabric-on-fabric, held shut with
+    kitchen thumb/finger clips (same family as cereal-bag clips). Seal first; grounding is optional.
+  </p>
+</div>
+
+<div class="card" id="runs">
+  <h2>3 · Experiment runs &amp; videos</h2>
+  <p>
+    Videos live on Google Drive (not hosted inside this repo). Each link is a plain-language title — click to watch.
+    More clips from today’s session will fill the pending slots as Drive links arrive.
+  </p>
+
+  <div class="video" id="run-rx-cloth-sealed">
+    <span class="tag run">Run · logged</span>
+    <p style="margin:0.4rem 0 0.2rem">
+      <a class="watch" href="https://drive.google.com/file/d/1HHOCndru053vzz-6abeDyGQQifcr8gRl/view?usp=drivesdk" target="_blank" rel="noopener">
+        Video · TinySA #3 telescopic monopole inside Faraday cloth (2.45&nbsp;GHz listen mockup)
+      </a>
+    </p>
+    <p class="role">
+      RX: Ultra <strong>#3</strong> + chrome telescoping monopole in the silver cloth bag.
+      Documents packing / screen / antenna placement for the kitchen oven listen.
+      Drive file name on upload: <code>Microwave_Oven detector 2_45GHz inside faraday cage.MOV</code>.
+    </p>
+  </div>
+
+  <div class="video pending" id="run-both-ultras-inside">
+    <span class="tag wait">Pending · standby for Drive link</span>
+    <p style="margin:0.4rem 0 0.2rem"><strong>Video · Both TinySA Ultras inside the Faraday cloth</strong></p>
+    <p class="role">
+      Permutation: Ultra <strong>#3</strong> (telescopic monopole) <em>and</em> Ultra <strong>#2</strong> (bifilar hybrid coil)
+      both inside the sealed cloth. Compare traces / peaks with oven on vs off.
+    </p>
+  </div>
+
+  <div class="video pending" id="run-cloth-unwrapped">
+    <span class="tag wait">Pending · standby for Drive link</span>
+    <p style="margin:0.4rem 0 0.2rem"><strong>Video · Faraday cloth unwrapped (open / control geometry)</strong></p>
+    <p class="role">
+      Same antennas / oven context with the cloth <em>not</em> multi-wrapped — control for how much the enclosure changes the listen.
+    </p>
+  </div>
+
+  <div class="video pending" id="run-displays-oven-off">
+    <span class="tag wait">Pending · standby for Drive link</span>
+    <p style="margin:0.4rem 0 0.2rem"><strong>Video · TinySA displays inside cloth after microwave is off</strong></p>
+    <p class="role">
+      Source-off / cooldown baseline with analyzers still in the bag — needed before any “oven-on excess” claim.
+    </p>
+  </div>
+
+  <div class="video pending" id="run-monopole-outside">
+    <span class="tag wait">Pending · standby for Drive link</span>
+    <p style="margin:0.4rem 0 0.2rem"><strong>Video · Telescopic monopole outside the Faraday cloth</strong></p>
+    <p class="role">
+      Antenna-location permutation: chrome monopole <em>outside</em> the bag (cloth still used as noted in the clip) vs inside runs above.
+    </p>
+  </div>
+</div>
+
+<div class="card" id="next">
+  <h2>4 · Next · H10 magnetic probe (B-null)</h2>
+  <p>
+    Strong next step: place Tekbox <strong>H10</strong> (or H20) <strong>inside</strong> the Faraday cloth beside the RX antennas
+    with the microwave <strong>on</strong>, and ask whether a clear <strong>B-field</strong> accompanies any SA peak.
+  </p>
+  <ul>
+    <li><strong>SA peak + clear H-probe line</strong> → treat as TEM / mixed — do not claim pure SLW/SW.</li>
+    <li><strong>SA peak + H at noise</strong> → consistent with weak-B hypothesis; still not a proof (log orientations, LNA, seal).</li>
+  </ul>
+  <p>
+    Kit notes / expected TinySA levels:
+    <a href="https://9wzg44nz44-glitch.github.io/kit.html#tinysa-expected">hub kit · TinySA expected + Tekbox cautions</a>.
+  </p>
+</div>
+
+<div class="card" id="related">
+  <h2>5 · Related pages</h2>
+  <ul>
+    <li><a href="https://9wzg44nz44-glitch.github.io/Proposed-Experiment---Hively-and-Microwave-Oven/">Proposed methods · Hively 8&nbsp;GHz → microwave-oven Faraday-cage tests (2.45&nbsp;GHz)</a></li>
+    <li><a href="https://9wzg44nz44-glitch.github.io/Experiment-E-Exodus-Capacitor-SLW-SW/">Experiment E · Exodus capacitor listen checklist</a></li>
+    <li><a href="https://9wzg44nz44-glitch.github.io/kit.html#tekbox">Kit · Tekbox H-probes &amp; B-null</a></li>
+  </ul>
+  <div class="note">
+    Videos remain on Daniel’s Google Drive. This page only links them. Update pending slots when new Drive URLs arrive (19&nbsp;Sep&nbsp;2026 session).
+  </div>
+</div>
+
+</div>
+
+<footer>
+  Educational notes · Dan Britton · BrittonSolutions · Middletown RI / Lady Lake FL · ARRL ·
+  GitHub Pages repo <code>Florida-Kitchen-Microwave-Oven-SLW-SW-Experiments-2026-09-19</code>
+</footer>
+</body>
+</html>
