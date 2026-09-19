@@ -38,8 +38,20 @@ nav {
   max-width: 920px; margin: 0 auto 1.25rem; display: flex; flex-wrap: wrap; gap: 0.55rem 1rem;
   font-size: 0.92rem;
 }
-nav a { color: var(--accent); text-decoration: none; }
-nav a:hover { text-decoration: underline; }
+nav a { color: #93c5fd; text-decoration: none; }
+nav a:hover { text-decoration: underline; color: #fff; }
+/* Body/content links: never default purple on dark bg */
+.container a, .card a, footer a {
+  color: #93c5fd;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.container a:visited, .card a:visited, footer a:visited {
+  color: #bfdbfe;
+}
+.container a:hover, .card a:hover, footer a:hover {
+  color: #ffffff;
+}
 .container { max-width: 920px; margin: 0 auto; }
 .card {
   background: var(--card);
@@ -85,6 +97,7 @@ ul, ol { padding-left: 1.25rem; margin-bottom: 0.75rem; }
   text-decoration: none;
   border-bottom: 1px solid rgba(147,197,253,0.35);
 }
+.video a.watch:visited { color: #bfdbfe; border-bottom-color: rgba(191,219,254,0.45); }
 .video a.watch:hover { color: #fff; border-bottom-color: #fff; }
 .video .role { color: var(--muted); font-size: 0.9rem; margin-top: 0.35rem; }
 .video.pending { opacity: 0.85; border-style: dashed; }
