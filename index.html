@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Florida Kitchen Microwave-Oven SLW/SW Experiments · 19–20 Sep 2026</title>
+<title>Florida Kitchen · Faraday cloth · 20 Sep 2026</title>
 <style>
 :root {
   --bg: #0f1419;
@@ -13,115 +13,71 @@
   --text: #e2e8f0;
   --muted: #94a3b8;
   --warn: #f59e0b;
-  --danger: #ef4444;
   --border: #334155;
-  --hyp: #a78bfa;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
   font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
   background: var(--bg);
   color: var(--text);
-  line-height: 1.65;
-  padding: 0 1rem 4rem;
+  line-height: 1.55;
+  padding: 0 1rem 3.5rem;
+  font-size: 1.12rem;
 }
 header {
   background: linear-gradient(135deg, #1e3a5f 0%, #12241f 55%, #0f172a 100%);
   border-bottom: 1px solid var(--border);
-  padding: 2.2rem 1rem 1.8rem;
-  margin: 0 -1rem 1.5rem;
+  padding: 2rem 1rem 1.6rem;
+  margin: 0 -1rem 1.25rem;
   text-align: center;
 }
-header h1 { font-size: 1.55rem; margin-bottom: 0.45rem; letter-spacing: -0.02em; }
-header .meta { color: var(--muted); font-size: 0.98rem; max-width: 40rem; margin: 0 auto; }
-nav {
-  max-width: 920px; margin: 0 auto 1.25rem; display: flex; flex-wrap: wrap; gap: 0.55rem 1rem;
-  font-size: 0.92rem;
-}
-nav a { color: #93c5fd; text-decoration: none; }
-nav a:hover { text-decoration: underline; color: #fff; }
-/* Body/content links: high contrast on dark (avoid browser default purple) */
-.container a:link,
-.container a:visited,
-.card a:link,
-.card a:visited,
-footer a:link,
-footer a:visited {
-  color: #fde68a !important; /* amber/yellow — readable on dark */
-  text-decoration: underline !important;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 3px;
-}
-.container a:hover,
-.card a:hover,
-footer a:hover {
-  color: #ffffff !important;
-}
-a.inpage-link:link,
-a.inpage-link:visited {
-  color: #fef08c !important;
-  font-weight: 650;
-}
+header h1 { font-size: clamp(1.6rem, 4vw, 2.15rem); margin-bottom: 0.4rem; letter-spacing: -0.02em; }
+header .meta { color: var(--muted); font-size: 1.08rem; max-width: 40rem; margin: 0 auto; }
 .container { max-width: 920px; margin: 0 auto; }
 .card {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 12px;
-  padding: 1.35rem 1.5rem;
-  margin-bottom: 1.25rem;
+  padding: 1.4rem 1.5rem;
+  margin-bottom: 1.15rem;
 }
 .card h2 {
-  font-size: 1.2rem; color: var(--accent);
-  margin-bottom: 0.75rem; padding-bottom: 0.4rem;
-  border-bottom: 1px solid var(--border);
+  font-size: clamp(1.35rem, 3vw, 1.7rem);
+  color: #93c5fd;
+  margin-bottom: 0.65rem;
 }
-.card h3 { font-size: 1.02rem; color: var(--accent2); margin: 1rem 0 0.45rem; }
-p, li { margin-bottom: 0.55rem; }
-ul, ol { padding-left: 1.25rem; margin-bottom: 0.75rem; }
-.tag {
-  display: inline-block; font-size: 0.72rem; font-weight: 700;
-  letter-spacing: 0.04em; text-transform: uppercase;
-  padding: 0.12rem 0.45rem; border-radius: 4px; vertical-align: middle;
+.lede {
+  font-size: clamp(1.15rem, 2.5vw, 1.35rem);
+  color: var(--text);
+  margin-bottom: 1rem;
 }
-.tag.hyp { background: rgba(167,139,250,0.18); color: var(--hyp); }
-.tag.run { background: rgba(16,185,129,0.15); color: var(--accent2); }
-.tag.wait { background: rgba(148,163,184,0.18); color: var(--muted); }
-.note, .warn, .danger {
-  padding: 0.85rem 1rem; border-radius: 0 8px 8px 0; margin: 1rem 0; font-size: 0.95rem;
-}
-.note { background: rgba(59,130,246,0.08); border-left: 4px solid var(--accent); }
-.warn { background: rgba(245,158,11,0.1); border-left: 4px solid var(--warn); }
-.danger { background: rgba(239,68,68,0.1); border-left: 4px solid var(--danger); }
-.video {
-  background: #0b1120;
+.player {
+  width: 100%;
+  border-radius: 12px;
+  background: #000;
   border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 1rem 1.1rem;
-  margin: 0.85rem 0;
+  margin: 0.75rem 0 0.5rem;
+  aspect-ratio: 16 / 9;
 }
-.video a.watch {
-  display: inline-block;
-  font-weight: 650;
+.caption { color: var(--muted); font-size: 1.05rem; margin-top: 0.35rem; }
+.container a:link, .container a:visited, footer a:link, footer a:visited {
   color: #fde68a !important;
-  font-size: 1.05rem;
-  text-decoration: none;
-  border-bottom: 2px solid rgba(253,230,138,0.55);
+  text-decoration: underline !important;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
 }
-.video a.watch:visited { color: #fef08c !important; border-bottom-color: rgba(254,240,140,0.55); }
-.video a.watch:hover { color: #fff !important; border-bottom-color: #fff; }
-.video .role { color: var(--muted); font-size: 0.9rem; margin-top: 0.35rem; }
-.video.pending { opacity: 0.85; border-style: dashed; }
-table { width: 100%; border-collapse: collapse; margin: 0.75rem 0; font-size: 0.92rem; }
-th, td { border: 1px solid var(--border); padding: 0.45rem 0.6rem; text-align: left; vertical-align: top; }
-th { background: #121a28; color: var(--muted); font-weight: 600; }
-footer { max-width: 920px; margin: 2rem auto 0; color: var(--muted); font-size: 0.85rem; }
-code { font-family: ui-monospace, monospace; font-size: 0.88em; background: #0b1120; padding: 0.1em 0.35em; border-radius: 4px; }
+.container a:hover, footer a:hover { color: #fff !important; }
+.note {
+  padding: 0.85rem 1rem; border-radius: 0 8px 8px 0; margin: 1rem 0;
+  background: rgba(59,130,246,0.08); border-left: 4px solid var(--accent);
+  font-size: 1.02rem;
+}
 details.archive {
-  margin-top: 0.5rem;
+  margin-top: 0.75rem;
   border: 1px dashed var(--border);
   border-radius: 10px;
   background: #121a28;
-  padding: 0.35rem 0.75rem 0.75rem;
+  padding: 0.35rem 0.85rem 0.85rem;
 }
 details.archive > summary {
   cursor: pointer;
@@ -129,447 +85,187 @@ details.archive > summary {
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  padding: 0.75rem 0.35rem;
-  font-weight: 650;
+  padding: 0.85rem 0.25rem;
+  font-weight: 700;
+  font-size: 1.12rem;
   color: #fde68a;
   user-select: none;
 }
 details.archive > summary::-webkit-details-marker { display: none; }
 details.archive > summary::before {
   content: "▸";
-  display: inline-block;
-  transition: transform 0.15s ease;
   color: var(--muted);
+  transition: transform 0.15s ease;
 }
 details.archive[open] > summary::before { transform: rotate(90deg); }
 details.archive > summary .hint {
   font-weight: 500;
   color: var(--muted);
-  font-size: 0.88rem;
+  font-size: 0.95rem;
 }
-details.archive .archive-body { padding-top: 0.35rem; }
-.conclusion-invite {
-  margin: 1.25rem 0 0.5rem;
-  padding: 1.25rem 1.35rem;
-  border-radius: 12px;
-  border: 2px solid #fde68a;
-  background: linear-gradient(160deg, rgba(253,230,138,0.12) 0%, rgba(26,35,50,0.95) 55%);
-  text-align: center;
+.archive-body { padding-top: 0.35rem; font-size: 1rem; }
+.archive-body h3 { color: var(--accent2); margin: 1rem 0 0.4rem; font-size: 1.1rem; }
+.archive-body p, .archive-body li { margin-bottom: 0.5rem; }
+.archive-body ul, .archive-body ol { padding-left: 1.25rem; margin-bottom: 0.75rem; }
+.video {
+  background: #0b1120;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.9rem 1rem;
+  margin: 0.75rem 0;
 }
-.conclusion-invite .kicker {
-  display: block;
-  font-size: 0.8rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #fde68a;
-  font-weight: 700;
-  margin-bottom: 0.55rem;
+.video a.watch {
+  display: inline-block;
+  font-weight: 650;
+  color: #fde68a !important;
+  font-size: 1.08rem;
+  text-decoration: none;
+  border-bottom: 2px solid rgba(253,230,138,0.55);
 }
-.conclusion-invite .q {
-  font-size: clamp(1.35rem, 3.2vw, 1.95rem);
-  line-height: 1.25;
-  font-weight: 750;
-  color: #fff;
-  margin: 0 0 0.65rem;
-}
-.conclusion-invite .ask {
-  margin: 0;
-  color: var(--muted);
-  font-size: 1.02rem;
-  max-width: 42rem;
-  margin-inline: auto;
-}
-.conclusion-invite.footer-big {
-  margin: 2rem 0 1rem;
-  padding: 1.6rem 1.4rem;
-}
-.conclusion-invite.footer-big .q {
-  font-size: clamp(1.55rem, 4vw, 2.35rem);
-}
+.video .role { color: var(--muted); font-size: 0.95rem; margin-top: 0.35rem; }
+table { width: 100%; border-collapse: collapse; margin: 0.75rem 0; font-size: 0.98rem; }
+th, td { border: 1px solid var(--border); padding: 0.45rem 0.6rem; text-align: left; vertical-align: top; }
+th { background: #121a28; color: var(--muted); font-weight: 600; }
+footer { max-width: 920px; margin: 2rem auto 0; color: var(--muted); font-size: 0.9rem; }
+code { font-family: ui-monospace, monospace; font-size: 0.88em; background: #0b1120; padding: 0.1em 0.35em; border-radius: 4px; }
 </style>
 </head>
 <body>
 <header>
-  <h1>Florida kitchen · microwave-oven Faraday-cloth experiments</h1>
-  <p class="meta">
-    Lady Lake, FL · <strong>19–20 Sep 2026</strong> · consumer oven at <strong>2.45&nbsp;GHz</strong> ·
-    TinySA Ultra detectors · educational SLW/SW search with warm skepticism
-  </p>
+  <h1>Florida kitchen · Faraday cloth · E5 open vs shut</h1>
+  <p class="meta">Lady Lake, FL · <strong>20 Sep 2026</strong> · microwave ~2.45&nbsp;GHz · TinySA + Tekbox E5</p>
 </header>
-
-<nav class="container">
-  <a href="#hypothesis">What we’re doing</a>
-  <a href="#conclusion-invite">Checklist / invite</a>
-  <a href="#hardware">Hardware</a>
-  <a href="#e5-runs">Current runs · E5</a>
-  <a href="#table1">Table 1 · Hively/Loebl</a>
-  <a href="#compare-cut">Comparison cut</a>
-  <a href="#prior">Prior work (archive)</a>
-  <a href="#related">Related pages</a>
-</nav>
 
 <div class="container">
 
-<div class="card" id="hypothesis">
-  <h2>1 · What we’re doing so far</h2>
-  <p>
-    A consumer microwave oven is already a strong <strong>Faraday cage at 2.45&nbsp;GHz</strong> (TEM leakage is tightly regulated).
-    Extended Electrodynamics / Dr.&nbsp;Hively-style bookkeeping asks whether any <strong>non-TEM</strong> component
-    (Scalar Longitudinal Wave <strong>SLW</strong> or Scalar Wave <strong>SW</strong>) could still be detectable
-    <em>outside</em> or <em>through soft Faraday cloth</em> when the oven is on — or whether what we see is ordinary TEM leakage, multipath, or instrument artifact.
+<div class="card" id="today">
+  <h2>Today’s result</h2>
+  <p class="lede">
+    Cage <strong>open</strong> + microwave on → noisy TinySA. Cage <strong>shut</strong> + E5 far from the bifilar → nearly quiet inside.
+    A useful Faraday / coupling control — <strong>not</strong> an SLW / SW claim.
   </p>
+  <video class="player" controls playsinline preload="metadata"
+    src="assets/e5-open-vs-shut-compare-v2.mp4"
+    title="E5 open-noisy vs shut-quiet comparison">
+    Your browser can’t play this video.
+    <a href="assets/e5-open-vs-shut-compare-v2.mp4">Download the MP4</a>.
+  </video>
+  <p class="caption">
+    Back-to-back, then silent side-by-side, then a short spoken wrap-up (Hively checklist + 22&nbsp;Sep H10+E5 plan).
+    Also on Drive:
+    <a href="https://drive.google.com/file/d/1ycPNc8bdv4vk067tAPUD6YtMTdMn1VaO/view?usp=drivesdk" target="_blank" rel="noopener">open in Google Drive</a>.
+  </p>
+  <div class="note">
+    <strong>Next (connectors · 22 Sep 2026):</strong> put both Tekbox <strong>H10</strong> and <strong>E5</strong> inside the sealed cloth in the same run.
+  </div>
+</div>
+
+<details class="archive" id="details">
+  <summary>
+    Details &amp; archive
+    <span class="hint">(hardware, Hively checklist, Table&nbsp;1, yesterday’s H10 videos)</span>
+  </summary>
+  <div class="archive-body">
+
+  <h3>What this is</h3>
   <p>
-    Kitchen work so far is an <strong>effective mockup / first listen</strong>: TinySA Ultras, soft Faraday-cloth bag sealed by multi-wrap + kitchen clips, oven on/off baselines,
-    then probe swaps inside the cloth (H10 magnetic → Tekbox <strong>E5</strong> electric).
-    It maps to the longer lab proposal
-    (<a class="inpage-link" href="https://9wzg44nz44-glitch.github.io/Proposed-Experiment---Hively-and-Microwave-Oven/">Hively microwave-oven Faraday-cage methods</a>)
-    and also informs <strong>Experiment&nbsp;A</strong> packing (sphere / mesh enclosure discipline).
+    Soft Faraday-cloth bag + consumer microwave. Today’s E5 work (E5 far from bifilar) follows yesterday’s H10 B-null listens.
+    Warm skepticism throughout.
   </p>
 
-  <h3>Dr.&nbsp;Hively claim checklist — required before any SLW / SW claim</h3>
+  <h3>Dr. Hively · before any SLW / SW claim</h3>
   <p>
-    From Dr.&nbsp;Hively’s reply <strong>20&nbsp;Sep&nbsp;2026 · 2:20&nbsp;AM&nbsp;ET</strong>
-    (subject: <em>RE: Watch the videos in the link of my last email (ideas protected under NDA)</em>).
-    He opened with: <strong>“You are not detecting the scalar wave.”</strong>
-    Warm skepticism: we are on the right track, but this checklist is <strong>not finished</strong>.
+    From his 20&nbsp;Sep&nbsp;2026 · 2:20&nbsp;AM&nbsp;ET reply. He opened with: <strong>“You are not detecting the scalar wave.”</strong>
   </p>
-  <p>His exact requirements to <em>definitively</em> show detection of an SLW:</p>
   <ol>
-    <li><strong>zero B-field</strong> (use a magnetic dipole antenna);</li>
-    <li><strong>a scalar field</strong> (use an array of high-magnetic-hysteresis, half-wave-length, linear dipoles);</li>
-    <li><strong>an electric field along the direction of propagation</strong> (longitudinal not transverse) —
-      use an array of half-wavelength, linear, resistive dipoles;</li>
-    <li><strong>1/r² attenuation</strong> in the far field over <strong>at least 20 wavelengths</strong>, preferably <strong>&gt;50 wavelengths</strong>.</li>
+    <li><strong>zero B-field</strong> (magnetic dipole antenna);</li>
+    <li><strong>a scalar field</strong> (array of high-magnetic-hysteresis, half-wavelength, linear dipoles);</li>
+    <li><strong>longitudinal E</strong> along propagation (not transverse) — half-wavelength linear resistive dipoles;</li>
+    <li><strong>1/r²</strong> far-field over ≥20 wavelengths (prefer &gt;50).</li>
   </ol>
-  <p>
-    Also: for the dipoles, <strong>rotate the dipole like Monstein/Wesley</strong> did to show directionality.
-    See <strong>Table&nbsp;1 in the 2019 Hively/Loebl paper</strong>
-    (<cite>Physics Essays</cite> 32, 112–126, 2019; SLW starred items also summarized in Hively &amp; Reed,
-    <cite>Symmetry</cite> 2020, Table&nbsp;1, adapted from that paper).
-  </p>
+  <p>Also: rotate dipoles like Monstein/Wesley. See Table&nbsp;1 in the 2019 Hively/Loebl paper.</p>
+  <p><strong>Not</strong> “no E inside the cage” — he wants longitudinal E along propagation, plus zero B, scalar-field dipoles, and 1/r².</p>
 
-  <h3 id="table1">Table 1 · testable EED / SLW predictions (Hively &amp; Loebl 2019)</h3>
-  <p style="color:var(--muted);font-size:0.92rem">
-    Educational summary of starred SLW-relevant rows. Not a substitute for the paper.
-    Starred items below are those Hively/Reed mark as having prior SLW-test consistency.
-  </p>
-  <div class="table-wrap">
+  <h3 id="table1">Table 1 · starred SLW rows (Hively &amp; Loebl 2019)</h3>
+  <p style="color:var(--muted)">Educational summary via Hively &amp; Reed, <cite>Symmetry</cite> 2020 Table&nbsp;1 (adapted from the 2019 paper).</p>
   <table>
-    <thead><tr><th>#</th><th>Prediction (brief)</th><th>Notes</th></tr></thead>
+    <thead><tr><th>#</th><th>Prediction</th></tr></thead>
     <tbody>
-      <tr><td>1*</td><td>SLW drivers: irrotational <em>A</em>/<em>E</em>/<em>J</em> with <strong>B&nbsp;=&nbsp;0</strong></td><td>Magnetic null is required language</td></tr>
-      <tr><td>2</td><td>Dynamical scalar field <strong>C</strong> = ∇·A + εμ ∂Φ/∂t</td><td>Scalar-field antenna path</td></tr>
-      <tr><td>3*</td><td>SLW has a <strong>longitudinal E</strong>-field</td><td>Not “no E inside the cage”</td></tr>
-      <tr><td>6*</td><td>SLW power comparable to TEM</td><td>Order-of-magnitude check</td></tr>
-      <tr><td>7*</td><td>Unconstrained by classical skin effect</td><td>Hypothesis under test</td></tr>
-      <tr><td>8*</td><td>Free-space attenuation ~ <strong>1/r²</strong></td><td>Distance sweep · ≥20 λ (prefer &gt;50)</td></tr>
-      <tr><td>9*</td><td>Monopole SLW radiation isotropic</td><td>Geometry / orientation tests</td></tr>
-    </tbody>
-  </table>
-  </div>
-  <p class="footnote">
-    Full Table&nbsp;1 has 20 items (incl. scalar-wave / interface / momentum terms). Kitchen work so far only touches early Faraday / B-null / E-listen controls.
-  </p>
-
-  <div class="note" id="next-h10-e5">
-    <strong>Next hardware step (connectors · 22&nbsp;Sep&nbsp;2026).</strong>
-    Plan to place <strong>both</strong> Tekbox <strong>H10</strong> (B / magnetic dipole) and <strong>E5</strong> (E) inside the sealed Faraday cloth in the same run,
-    so B-null and E listen are logged together once the SMA connectors arrive.
-  </div>
-
-  <div class="warn">
-    <strong>Do not paraphrase as “no E-field inside the cage.”</strong>
-    Dr.&nbsp;Hively requires showing a <em>longitudinal</em> E along the propagation direction (not transverse),
-    plus zero B, scalar-field dipoles, and far-field 1/r² — not the absence of E.
-    Soft-cloth seal quality, multipath, probe orientation, and TEM leakage vs hypothesized longitudinal content remain open.
-    A peak on a TinySA is not “proven SLW.”
-  </div>
-  <div class="note">
-    <strong>On the right track.</strong> H10 B-null listens and today’s E5 configuration work are useful progress —
-    not a defeat, and not a claim. Working through his list before any SLW language.
-  </div>
-
-  <div class="conclusion-invite" id="conclusion-invite">
-    <span class="kicker">Checklist unfinished · join in</span>
-    <p class="q">Are we on the right track — or is this still ordinary TEM / artifact?</p>
-    <p class="ask">
-      Look at the current E5 open-config and sealed-cloth takes plus the archived H10 / antenna runs, then weigh in —
-      Dr.&nbsp;Hively, Steve, and other readers invited. No SLW/SW claim yet; warm skepticism welcome.
-    </p>
-  </div>
-
-</div>
-
-<div class="card" id="hardware">
-  <h2>2 · Hardware setup (kitchen · current)</h2>
-  <table>
-    <thead><tr><th>Item</th><th>Role</th></tr></thead>
-    <tbody>
-      <tr><td>Consumer microwave oven</td><td>High-power ~2.45&nbsp;GHz source inside its own metal Faraday cage</td></tr>
-      <tr><td>Silver Faraday-cloth bag</td><td>Soft RX enclosure; <strong>three wraps</strong> of all fabric edges held with cereal-bag / thumb clips</td></tr>
-      <tr><td><strong>TinySA Ultra #1</strong></td><td>Spectrum analyzer dedicated to the Tekbox <strong>E5</strong> electric-field sensor probe (current · 20&nbsp;Sep)</td></tr>
-      <tr><td><strong>TinySA Ultra #3</strong></td><td>Spectrum analyzer + <strong>telescoping chrome monopole</strong> antenna</td></tr>
-      <tr><td><strong>TinySA Ultra #2</strong></td><td>Spectrum analyzer + <strong>bifilar hybrid coil</strong> antenna (see below)</td></tr>
-      <tr><td>Handheld ham radio (70&nbsp;cm / 23&nbsp;cm)</td><td>Band awareness when transmitting elsewhere — not used as the oven RX</td></tr>
-      <tr><td>Optional earth bond</td><td>Verified outlet <strong>ground pin only</strong>, short braid — secondary to sealing</td></tr>
-      <tr><td>Tekbox <strong>E5</strong> (current)</td><td>On Ultra <strong>#1</strong> — E-field listen inside the Faraday cloth — see <a href="#e5-runs">Current runs · E5</a></td></tr>
-      <tr><td>Tekbox <strong>H10</strong> (archived)</td><td>Was on Ultra <strong>#1</strong> for 19&nbsp;Sep B-null / sealed-cloth magnetic takes — now under <a href="#prior">Prior work (archive)</a></td></tr>
+      <tr><td>1*</td><td>Drivers with <strong>B&nbsp;=&nbsp;0</strong></td></tr>
+      <tr><td>2</td><td>Dynamical scalar field <strong>C</strong></td></tr>
+      <tr><td>3*</td><td><strong>Longitudinal E</strong></td></tr>
+      <tr><td>6*</td><td>Power comparable to TEM</td></tr>
+      <tr><td>7*</td><td>Unconstrained by classical skin effect</td></tr>
+      <tr><td>8*</td><td>Free-space ~ <strong>1/r²</strong></td></tr>
+      <tr><td>9*</td><td>Monopole radiation isotropic</td></tr>
     </tbody>
   </table>
 
-  <h3>Bifilar hybrid coil (TinySA #2)</h3>
-  <p>
-    Two <strong>opposing-wind</strong> single-wire pancake coils, electrically joined at the center (coil end of the wire),
-    laid on top of each other so the currents are <strong>opposing</strong>. Intent: the magnetic fields largely
-    <strong>cancel</strong> (TEM / loop-like B response suppressed), leaving a detector more sensitive to
-    hypothesized longitudinal / scalar-ish coupling than a plain monopole — still <span class="tag hyp">HYP</span>, not a proof.
-  </p>
-
-  <h3>Cloth seal (important)</h3>
-  <p>
-    Edges are not left open for the real runs: <strong>three wraps</strong> of fabric-on-fabric, held shut with
-    kitchen thumb/finger clips (same family as cereal-bag clips). Seal first; grounding is optional.
-  </p>
-
-  <p>
-    Kit notes:
-    <a href="https://9wzg44nz44-glitch.github.io/kit.html#tinysa-expected">expected TinySA levels + Tekbox cautions</a>
-    · <a href="https://9wzg44nz44-glitch.github.io/kit.html#tekbox">Tekbox probes &amp; B-null protocol</a>.
-  </p>
-</div>
-
-<div class="card" id="e5-runs">
-  <h2>3 · Current runs · E5 electric probe (20 Sep 2026)</h2>
-  <p>
-    Configuration change: Tekbox <strong>H10</strong> magnetic probe on TinySA Ultra <strong>#1</strong> was
-    <strong>replaced</strong> with the Tekbox <strong>E5</strong> electric-field sensor probe (still on Ultra&nbsp;#1)
-    inside the Faraday-cloth bag. This is one step toward characterizing E inside the cloth —
-    not a substitute for Dr.&nbsp;Hively’s full longitudinal-E / resistive-dipole array requirement.
-  </p>
+  <h3>Hardware (current)</h3>
   <ul>
-    <li><strong>Video&nbsp;1 (IMG_0726)</strong> — cloth <strong>open</strong>, hardware configuration visible.</li>
-    <li><strong>Video&nbsp;2 (IMG_0727)</strong> — cloth <strong>closed</strong>, microwave running, E5 inside.</li>
+    <li>Microwave oven ~2.45&nbsp;GHz</li>
+    <li>Faraday cloth · three wraps + cereal clips</li>
+    <li>TinySA Ultra #1 → Tekbox <strong>E5</strong> (today)</li>
+    <li>TinySA #2 → bifilar hybrid · #3 → telescopic monopole</li>
+    <li>H10 archived (yesterday)</li>
   </ul>
 
-  <div class="video" id="run-e5-open">
-    <span class="tag run">Run · logged · Video 1</span>
-    <p style="margin:0.4rem 0 0.2rem">
-      <a class="watch" href="https://drive.google.com/file/d/17oJcXppxZ9JFCii69EZJdIXsH4tj8LTj/view?usp=drivesdk" target="_blank" rel="noopener">
-        Video 1 · Cage OPEN — E5 hardware configuration (IMG_0726)
-      </a>
-    </p>
-    <p class="role">
-      Faraday cloth <strong>open</strong> / draped. Tekbox <strong>E5</strong> on Ultra <strong>#1</strong> with the 20&nbsp;Sep packing
-      shown before seal. Drive title:
-      <code>FL-Kitchen-MW-2026-09-20-E5-OpenCloth-Config.MOV</code>
-      (was <code>IMG_0726.MOV</code>).
-    </p>
+  <h3>Today’s source clips (Drive)</h3>
+  <div class="video">
+    <a class="watch" href="https://drive.google.com/file/d/18AbAyaZMLVpXj9rBWAadonTWfCQT2usN/view?usp=drivesdk" target="_blank" rel="noopener">0728 · open · MW off · config</a>
+  </div>
+  <div class="video">
+    <a class="watch" href="https://drive.google.com/file/d/13MUP57T_NLbM6OH8WNAUfzqJCUaofHE8/view?usp=drivesdk" target="_blank" rel="noopener">0729 · open · MW on · noisy</a>
+  </div>
+  <div class="video">
+    <a class="watch" href="https://drive.google.com/file/d/1-K988rUe-WFSQQJnwsKtxL5gSP7wFYQ-/view?usp=drivesdk" target="_blank" rel="noopener">0730 · shut · MW on · nearly quiet</a>
+  </div>
+  <div class="video">
+    <a class="watch" href="https://drive.google.com/file/d/17oJcXppxZ9JFCii69EZJdIXsH4tj8LTj/view?usp=drivesdk" target="_blank" rel="noopener">0726 · open · earlier E5 config</a>
+  </div>
+  <div class="video">
+    <a class="watch" href="https://drive.google.com/file/d/1SDoN4kJtXG7wLYEoOdywaJ3dCC3vQs_-/view?usp=drivesdk" target="_blank" rel="noopener">0727 · shut · earlier E5 sealed</a>
   </div>
 
-  <div class="video" id="run-e5-sealed">
-    <span class="tag run">Run · logged · Video 2</span>
-    <p style="margin:0.4rem 0 0.2rem">
-      <a class="watch" href="https://drive.google.com/file/d/1SDoN4kJtXG7wLYEoOdywaJ3dCC3vQs_-/view?usp=drivesdk" target="_blank" rel="noopener">
-        Video 2 · Cage CLOSED — microwave on — E5 inside (IMG_0727)
-      </a>
-    </p>
-    <p class="role">
-      Faraday cloth <strong>sealed</strong>. Tekbox <strong>E5</strong> on Ultra <strong>#1</strong> inside the bag;
-      microwave oven running. Occasional electric-field readings appear on the analyzer —
-      interesting, not yet interpreted as SLW/SW (see Dr.&nbsp;Hively checklist above).
-      Drive title:
-      <code>FL-Kitchen-MW-2026-09-20-E5-Sealed-Cloth-MW-On.MOV</code>
-      (was <code>IMG_0727.MOV</code>).
-    </p>
+  <h3>Yesterday · H10 archive (19 Sep)</h3>
+  <div class="video">
+    <a class="watch" href="https://drive.google.com/file/d/1W744LQ2Izt3psabQE8y4-Om7lA97tQOE/view?usp=drivesdk" target="_blank" rel="noopener">H10 · open cloth</a>
+    <p class="role">Ultra #1 = H10 · cloth open</p>
   </div>
-</div>
-
-<div class="card" id="compare-cut">
-  <h2>3b · Comparison cut (open noisy vs shut quiet)</h2>
-  <p>
-    Edited short from IMG_0728 / 0729 / 0730: config walkthrough, <strong>back-to-back</strong> open/noisy vs shut/quiet,
-    then <strong>silent</strong> side-by-side with on-screen left/right notes, then a spoken wrap-up of
-    Dr.&nbsp;Hively’s checklist, Table&nbsp;1 highlights, and the <strong>22&nbsp;Sep&nbsp;2026</strong> plan for H10+E5 together inside the cloth.
-  </p>
-  <div class="video" id="run-e5-compare">
-    <span class="tag run">Edit · v2</span>
-    <p style="margin:0.4rem 0 0.2rem">
-      <a class="watch" href="https://drive.google.com/file/d/1ycPNc8bdv4vk067tAPUD6YtMTdMn1VaO/view?usp=drivesdk" target="_blank" rel="noopener">
-        Video · E5 open-noisy vs shut-quiet comparison (edited)
-      </a>
-    </p>
-    <p class="role">
-      Drive title: <code>FL-Kitchen-E5-OpenNoisy-vs-ShutQuiet-COMPARE-v2.mp4</code>
-      (~3&nbsp;min). Side-by-side audio is muted on purpose.
-    </p>
+  <div class="video">
+    <a class="watch" href="https://drive.google.com/file/d/1incSdcYwqy3C5NxnW8GvfAW95vcAKSsD/view?usp=drivesdk" target="_blank" rel="noopener">H10 · sealed · quiet floor</a>
+    <p class="role">B-null look inside sealed cloth</p>
   </div>
-</div>
+  <div class="video">
+    <a class="watch" href="https://drive.google.com/file/d/1TJxWusuisHAKAIhFjXEp4xg8HjNbiaWL/view?usp=drivesdk" target="_blank" rel="noopener">H10 quiet · bifilar peaks · #3 inside</a>
+  </div>
 
-<div class="card" id="prior">
-  <h2>4 · Prior work (archive · 19 Sep 2026)</h2>
-  <p style="color:var(--muted);font-size:0.95rem;margin-bottom:0.75rem">
-    Yesterday’s antenna-only / cloth-geometry takes and the Tekbox <strong>H10</strong> magnetic-probe (B-null) runs.
-    H10 is no longer the current Ultra&nbsp;#1 probe — archived here for the checklist trail. Click to expand.
-  </p>
-  <details class="archive" id="prior-archive">
-    <summary>
-      Prior work — antenna &amp; H10 B-null videos (19&nbsp;Sep)
-      <span class="hint">(click to expand archive)</span>
-    </summary>
-    <div class="archive-body">
+  <h3>Earlier antenna / cloth takes (19 Sep)</h3>
+  <div class="video">
+    <a class="watch" href="https://drive.google.com/file/d/1HHOCndru053vzz-6abeDyGQQifcr8gRl/view?usp=drivesdk" target="_blank" rel="noopener">Primary · oven off → on → off</a>
+  </div>
+  <div class="video">
+    <a class="watch" href="https://drive.google.com/file/d/1jtr2G-iGZrzQ9xLhPJeTSkIffToxWF0e/view?usp=drivesdk" target="_blank" rel="noopener">Cloth unwrapped control</a>
+  </div>
+  <div class="video">
+    <a class="watch" href="https://drive.google.com/file/d/1LElDh1G1WJIH4LfHFqbyuagYflKaQcpw/view?usp=drivesdk" target="_blank" rel="noopener">Both TinySAs inside sealed cloth</a>
+  </div>
 
-  <h3>H10 magnetic probe · B-null (19 Sep)</h3>
-  <p>
-    Tekbox <strong>H10</strong> on Ultra <strong>#1</strong> so any TinySA peak could be checked for a coincident
-    <strong>B-field</strong> (Dr.&nbsp;Hively: B knowledge is required before SLW/SW-vs-TEM language).
-  </p>
+  <h3>Related pages</h3>
   <ul>
-    <li><strong>SA peak + clear H-probe line</strong> → treat as TEM / mixed — do not claim pure SLW/SW.</li>
-    <li><strong>SA peak + H at noise</strong> → consistent with weak-B hypothesis; still not a proof (log orientation, LNA, seal).</li>
+    <li><a href="https://9wzg44nz44-glitch.github.io/Proposed-Experiment---Hively-and-Microwave-Oven/">Hively microwave-oven methods</a></li>
+    <li><a href="https://9wzg44nz44-glitch.github.io/kit.html#tekbox">Kit · Tekbox probes</a></li>
+    <li><a href="https://9wzg44nz44-glitch.github.io/monstein.html">Monstein &amp; Wesley notes</a></li>
   </ul>
 
-  <div class="video" id="run-h10-a">
-    <span class="tag run">Run · logged</span>
-    <p style="margin:0.4rem 0 0.2rem">
-      <a class="watch" href="https://drive.google.com/file/d/1W744LQ2Izt3psabQE8y4-Om7lA97tQOE/view?usp=drivesdk" target="_blank" rel="noopener">
-        Video · H10 on TinySA #1 — Faraday cloth open · #2 &amp; #3 also sweeping
-      </a>
-    </p>
-    <p class="role">
-      Tekbox <strong>H10</strong> on Ultra <strong>#1</strong> (blue PCB + black handle on the clear-tub rim; H-loop horizontal).
-      Cloth is <strong>open</strong> / draped aside — not sealed. Ultra <strong>#3</strong> in the tub with telescopic monopole;
-      Ultra <strong>#2</strong> outside the tub (bifilar / stub path as packed). Antenna Ultras show a mid-span peak
-      (oven not in frame; peaks suggest a nearby RF source). Drive title:
-      <code>FL-Kitchen-MW-2026-09-19-H10-OpenCloth-Beside-Tub-TinySA2-3.MOV</code>
-      (was <code>IMG_0721.MOV</code>).
-    </p>
   </div>
-
-  <div class="video" id="run-h10-b">
-    <span class="tag run">Run · logged</span>
-    <p style="margin:0.4rem 0 0.2rem">
-      <a class="watch" href="https://drive.google.com/file/d/1incSdcYwqy3C5NxnW8GvfAW95vcAKSsD/view?usp=drivesdk" target="_blank" rel="noopener">
-        Video · H10 on TinySA #1 inside sealed Faraday cloth — flat noise floor (B-null look)
-      </a>
-    </p>
-    <p class="role">
-      Cloth <strong>fully sealed</strong> (folded pouch). Tekbox <strong>H10</strong> connected by coax to Ultra <strong>#1</strong>
-      (loop flat / horizontal inside the bag). Other Ultra(s) also inside for the antenna listen.
-      SA traces sit near the <strong>noise floor</strong> (no tall mid-span peaks in this take) — oven not in frame.
-      Contrast with run&nbsp;A (open cloth, peaks visible). Drive title:
-      <code>FL-Kitchen-MW-2026-09-19-H10-Sealed-Cloth-B-Null-TinySA1.MOV</code>
-      (was <code>IMG_0722.MOV</code>).
-    </p>
-  </div>
-
-  <div class="video" id="run-h10-c">
-    <span class="tag run">Run · logged · verify</span>
-    <p style="margin:0.4rem 0 0.2rem">
-      <a class="watch" href="https://drive.google.com/file/d/1TJxWusuisHAKAIhFjXEp4xg8HjNbiaWL/view?usp=drivesdk" target="_blank" rel="noopener">
-        Video · Sealed-cloth re-run — #2 bifilar peaks, #1 H10 quiet, #3 telescopic also inside
-      </a>
-    </p>
-    <p class="role">
-      Cloth <strong>sealed</strong> (folded + clips). All three Ultras in the bag:
-      Ultra <strong>#1</strong> = Tekbox <strong>H10</strong> (trace near noise floor);
-      Ultra <strong>#2</strong> = bifilar hybrid — <strong>clear intermittent peaks</strong> above the floor (Dan points to a peak on #2, then to the flat #1);
-      Ultra <strong>#3</strong> = <strong>telescoping monopole</strong> (also inside the Faraday cloth).
-      Oven not in frame. Drive title:
-      <code>FL-Kitchen-MW-2026-09-19-Sealed-Cloth-Bifilar-Peaks-H10-Quiet-TinySA1-2-3.MOV</code>
-      (was <code>IMG_0723.MOV</code>).
-    </p>
-  </div>
-
-  <h3>Antenna-only / cloth-geometry takes (earlier 19 Sep)</h3>
-
-  <div class="video" id="run-rx-cloth-sealed">
-    <span class="tag run">Run · primary take</span>
-    <p style="margin:0.4rem 0 0.2rem">
-      <a class="watch" href="https://drive.google.com/file/d/1HHOCndru053vzz-6abeDyGQQifcr8gRl/view?usp=drivesdk" target="_blank" rel="noopener">
-        Video · Primary listen — TinySA display(s) in Faraday cloth while oven goes OFF → ON → OFF
-      </a>
-    </p>
-    <p class="role">
-      <strong>One continuous take</strong> (not a separate “oven off” clip): Dan videoed the analyzer display(s)
-      inside the Faraday cloth while the kitchen microwave was <strong>off, then on, then off</strong>.
-      Ultra <strong>#3</strong> + telescoping chrome monopole is the antenna shown in this packing/listen mockup.
-      Use this clip for source-off baselines <em>and</em> oven-on comparison — they are the same recording.
-      Drive title: <code>FL-Kitchen-MW-2026-09-19-TinySA3-Telescopic-Inside-Faraday-Cloth.MOV</code>.
-    </p>
-  </div>
-  <div class="video" id="run-cloth-unwrapped">
-    <span class="tag run">Run · logged</span>
-    <p style="margin:0.4rem 0 0.2rem">
-      <a class="watch" href="https://drive.google.com/file/d/1jtr2G-iGZrzQ9xLhPJeTSkIffToxWF0e/view?usp=drivesdk" target="_blank" rel="noopener">
-        Video · Faraday cloth unwrapped — both TinySAs open on the cloth (control)
-      </a>
-    </p>
-    <p class="role">
-      Cloth spread flat (not sealed). Ultra <strong>#2</strong> with bifilar hybrid (pink coax) in front;
-      Ultra <strong>#3</strong> with telescopic monopole in the clear tub behind. Cereal clips visible in a bag.
-      SA traces mostly noise floor with a small mid-span spike (oven not in frame). Drive title:
-      <code>FL-Kitchen-MW-2026-09-19-Cloth-Unwrapped-Both-TinySA-Open-Control.MOV</code>
-      (was <code>IMG_0718.MOV</code>).
-    </p>
-  </div>
-  <div class="video" id="run-both-ultras-inside">
-    <span class="tag run">Run · logged</span>
-    <p style="margin:0.4rem 0 0.2rem">
-      <a class="watch" href="https://drive.google.com/file/d/1LElDh1G1WJIH4LfHFqbyuagYflKaQcpw/view?usp=drivesdk" target="_blank" rel="noopener">
-        Video · Both TinySA Ultras inside sealed Faraday cloth (tub + three-wrap / cereal clip)
-      </a>
-    </p>
-    <p class="role">
-      Both analyzers in a clear tub inside the silver cloth: one with the <strong>telescopic chrome monopole</strong>,
-      one with the <strong>bifilar hybrid coil</strong> (black lead). Cloth closed with multi-wrap and a red cereal clip
-      (seal shown at end of clip). Yellow SA traces visible through the mesh (frequency readouts not legible on video).
-      Oven not in frame in this clip. Drive title:
-      <code>FL-Kitchen-MW-2026-09-19-Both-TinySA-Inside-Sealed-Faraday-Cloth.MOV</code>
-      (was <code>IMG_0720.MOV</code>).
-    </p>
-  </div>
-  <div class="video" id="run-displays-oven-off">
-    <span class="tag run">Covered by primary take</span>
-    <p style="margin:0.4rem 0 0.2rem"><strong>Oven-off / oven-on baselines</strong></p>
-    <p class="role">
-      No separate “Microwave Oven Off” video was shot. Off and on states are both in the
-      <a href="#run-rx-cloth-sealed">primary take</a> (off → on → off while watching the displays).
-      A Drive file later named “Microwave Oven Off” was a <em>duplicate upload</em> of the sealed-tub overview, not a true oven-off baseline — safe to trash.
-    </p>
-  </div>
-    </div>
-  </details>
-</div>
-
-<div class="card" id="related">
-  <h2>5 · Related pages</h2>
-  <ul>
-    <li><a href="https://9wzg44nz44-glitch.github.io/Proposed-Experiment---Hively-and-Microwave-Oven/">Proposed methods · Hively 8&nbsp;GHz → microwave-oven Faraday-cage tests (2.45&nbsp;GHz)</a></li>
-    <li><a href="https://9wzg44nz44-glitch.github.io/Experiment-E-Exodus-Capacitor-SLW-SW/">Experiment E · Exodus capacitor listen checklist</a></li>
-    <li><a href="https://9wzg44nz44-glitch.github.io/kit.html#tekbox">Kit · Tekbox H-probes &amp; B-null</a></li>
-    <li><a href="https://9wzg44nz44-glitch.github.io/kit.html#tinysa-expected">Kit · expected TinySA levels + Tekbox cautions</a></li>
-    <li><a href="https://9wzg44nz44-glitch.github.io/monstein.html">Monstein &amp; Wesley sphere / polarizer notes</a></li>
-  </ul>
-  <div class="note">
-    Videos remain on Daniel’s Google Drive. This page only links them. Current E5 slots are under §3;
-    19&nbsp;Sep H10 + antenna takes stay under Prior work (archive).
-  </div>
-</div>
+</details>
 
 </div>
-
-  <div class="conclusion-invite footer-big" id="conclusion-invite-bottom">
-    <span class="kicker">Checklist unfinished · on the right track?</span>
-    <p class="q">Did we finish Dr.&nbsp;Hively’s requirements — or are we still early?</p>
-    <p class="ask">
-      Same invitation as at the top — after the E5 sealed-cloth take and the archived H10 / antenna runs,
-      what do you conclude so far? No SLW/SW claim yet. Participation invited.
-    </p>
-  </div>
 
 <footer>
   Educational notes · Dan Britton · BrittonSolutions · Middletown RI / Lady Lake FL · ARRL ·
-  GitHub Pages repo <code>Florida-Kitchen-Microwave-Oven-SLW-SW-Experiments-2026-09-19</code>
+  <code>Florida-Kitchen-Microwave-Oven-SLW-SW-Experiments-2026-09-19</code>
 </footer>
 </body>
 </html>
